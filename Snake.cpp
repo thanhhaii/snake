@@ -40,6 +40,21 @@ public:
     }
 };
 
+#define MINX 2
+#define MINY 2
+#define MAXX 35
+#define MAXY20
+void VeKhung(){
+    for (int i = MINX; i <= MAXX; i++){
+        for (int j = MINY; j <= MAXY; j++){
+            if((i==MINX) || (j==MAXX) || (i==MINY) || (j==MAXY)){
+                gotoxy(i, j);
+                printf("+");
+            }
+        }
+    }
+}
+
 int main()
 {
     CONRAN r;
@@ -58,6 +73,7 @@ int main()
             if (t=='x') Huong = 1;
         }
         system("cls");
+        VeKhung();
         r.Ve(Qua);
         r.DiChuyen(Huong, Qua);
         Sleep(300);
